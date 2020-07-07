@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const PORT = process.env.PORT || 3000;
 
 // create a new Express application instance 
 const app = express();
@@ -10,6 +11,8 @@ const app = express();
 //configure the Express middleware to accept CORS requests and parse request body into JSON
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
+
+app.listen(PORT);
 
 //start application server on port 3000
 // app.listen(3000, () => {
