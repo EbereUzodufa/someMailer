@@ -12,9 +12,9 @@ app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
 //start application server on port 3000
-app.listen(3000, () => {
-  console.log("The server started on port 3000");
-});
+// app.listen(3000, () => {
+//   console.log("The server started on port 3000");
+// });
 
 app.get('/', function (req, res) {
   res.send('hello world')
