@@ -20,10 +20,6 @@ app.get('/', function (req, res) {
   res.send('hello world')
 })
 
-app.get('/', function (req, res) {
-  res.send('hello world')
-})
-
 // define a sendmail endpoint, which will send emails and response with the corresponding status
 app.post("/sendmail", (req, res) => {
   console.log("request came", req.body);
