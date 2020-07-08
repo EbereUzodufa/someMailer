@@ -4,10 +4,9 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const PORT = process.env.PORT || 3000;
-const emailKey = require("./key.json");
 
-const user_var = process.env.USER || emailKey.user;
-const pass_var = process.env.PASS || emailKey.pass;
+const user_var = process.env.USER_KEY;
+const pass_var = process.env.USER_PASS;
 
 // create a new Express application instance
 const app = express();
