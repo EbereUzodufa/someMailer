@@ -46,35 +46,6 @@ app.post("/sendmail", (req, res) => {
 });
 
 const sendMail = (user, callback) => {
-  // let testAccount = await nodemailer.createTestAccount();
-  // const ttestt = {
-  //     host: "smtp.ethereal.email",
-  //     port: 587,
-  //     secure: false, // true for 465, false for other ports
-  //     auth: {
-  //     user: testAccount.user, // generated ethereal user
-  //     pass: testAccount.pass, // generated ethereal password
-  //     },
-  // };
-
-  // const gmail = {
-  //   host: "smtp.sendgrid.net",
-  //   port: 587,
-  //   secure: false,
-  //   auth: {
-  //     user: "apikey",
-  //     pass: "<password>"
-  //   }
-  // }
-
-  // const mailtrapio = {
-  //   host: "smtp.mailtrap.io",
-  //   port: 2525,
-  //   auth: {
-  //     user: "94b784b5970edf",
-  //     pass: "01a5d515011f6e"
-  //   }
-  // };
 
   const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
@@ -162,7 +133,7 @@ const sendMail = (user, callback) => {
                      <td bgcolor="transparent" align="left" style="padding:0;Margin:0;padding-bottom:5px;padding-top:10px"><h3 style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;font-size:20px;font-style:normal;font-weight:bold;color:#2B3990; text-transformation: capitalize">Dear ${user.firstname} ${user.lastname},</h3></td> 
                     </tr> 
                     <tr style="border-collapse:collapse"> 
-                     <td bgcolor="transparent" align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#666666">Thank you for contacting us. We will get back to you with 48 hours.</p></td> 
+                     <td bgcolor="transparent" align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:roboto, 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#666666">Thank you for contacting us. We will get back to you as soon as possible.</p></td> 
                     </tr> 
                     <tr style="border-collapse:collapse"> 
                      <td height="25" align="center" style="padding:0;Margin:0"></td> 
@@ -256,6 +227,6 @@ const sendMail = (user, callback) => {
     `
   }
 
-  transporter.sendMail(mailOptions, callback);
   transporter.sendMail(toAdmin, callback);
+  transporter.sendMail(mailOptions, callback);
 };
