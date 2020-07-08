@@ -217,7 +217,7 @@ const sendMail = (user, callback) => {
 
   const toAdmin = {
     from: `<${user.email}>`,
-    to: `Tech Innovation and Solution (TIS), "info@techinnovationsandsolutions.com"`,
+    to: `Tech Innovation and Solution (TIS), "services@techinnovationsandsolutions.com"`,
     subject: "Contact On TIS Website",
     html: `
       <h1>The message is from ${user.firstname} ${user.lastname}</h1>
