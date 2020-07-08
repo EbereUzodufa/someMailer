@@ -58,7 +58,7 @@ const sendMail = (user, callback) => {
   });
 
   const mailOptions = {
-    from: `Tech Innovation and Solution (TIS), "info@techinnovationsandsolutions.com"`,
+    from: `Tech Innovation and Solution (TIS), "services@techinnovationsandsolutions.com"`,
     to: `<${user.email}>`,
     subject: "Thank you for contacting Tech Innovation and Solution (TIS)",
     html: `
