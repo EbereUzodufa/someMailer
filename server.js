@@ -1,3 +1,4 @@
+console.log(process.env);
 //import modules installed at the previous step. We need them to run Node.js server and send emails
 const express = require("express");
 const cors = require("cors");
