@@ -1,4 +1,3 @@
-console.log(process.env);
 //import modules installed at the previous step. We need them to run Node.js server and send emails
 const express = require("express");
 const cors = require("cors");
@@ -6,6 +5,9 @@ const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const PORT = process.env.PORT || 3000;
 const emailKey = require("./key.json");
+
+const user_var = process.env.USER || emailKey.user;
+const pass_var = process.env.PASS || emailKey.pass;
 
 // create a new Express application instance
 const app = express();
@@ -74,8 +76,6 @@ const sendMail = (user, callback) => {
   //     pass: "01a5d515011f6e"
   //   }
   // };
-  var user_var = process.env.user || emailKey.user;
-  var pass_var = process.env.pass || emailKey.pass;
 
   const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
