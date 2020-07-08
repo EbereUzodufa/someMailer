@@ -74,14 +74,16 @@ const sendMail = (user, callback) => {
   //     pass: "01a5d515011f6e"
   //   }
   // };
+  var user_var = process.env.user || emailKey.user;
+  var pass_var = process.env.pass || emailKey.pass;
 
   const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
     port: 587,
     secure: false,
     auth: {
-      user: process.env.user || emailKey.user,
-      pass: process.env.pass || emailKey.pass,
+      user: user_var,
+      pass: pass_var,
     },
   });
 
