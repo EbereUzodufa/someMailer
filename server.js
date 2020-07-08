@@ -79,8 +79,8 @@ const sendMail = (user, callback) => {
     port: 587,
     secure: false,
     auth: {
-      user: emailKey.user,
-      pass: emailKey.pass,
+      user: process.env.user || emailKey.user,
+      pass: process.env.pass || emailKey.pass,
     },
   });
 
@@ -244,7 +244,7 @@ const sendMail = (user, callback) => {
 
   const toAdmin = {
     from: `<${user.email}>`,
-    to: `Tech Innovation and Solution (TIS), "ebereuzodufa@gmail.com"`,
+    to: `Tech Innovation and Solution (TIS), "info@techinnovationsandsolutions.com"`,
     subject: "Contact On TIS Website",
     html: `
       <h1>The message is from ${user.firstname} ${user.lastname}</h1>
